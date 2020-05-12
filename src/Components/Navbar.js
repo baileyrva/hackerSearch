@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { search } from "../../src/actions/searchAction"
-import { fetchResults } from "../../src/actions/resultsActions"
+import React, { Component } from "./node_modules/react";
+import { connect } from "./node_modules/react-redux";
+import { search } from "../actions/searchAction"
+import { fetchResults } from "../actions/resultsAction"
 
 class Navbar extends Component {
   state = {
