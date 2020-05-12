@@ -1,5 +1,5 @@
-import React, { Component } from "./node_modules/react";
-import { connect } from "./node_modules/react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { search } from "../actions/searchAction"
 import { fetchResults } from "../actions/resultsAction"
 
@@ -18,7 +18,7 @@ class Navbar extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("Submitted");
+    console.log("submitted");
 
     this.props.search(this.state.currentSearch);
 
