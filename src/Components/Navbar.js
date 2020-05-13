@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { search } from "../actions/searchAction"
-import { fetchResults } from "../actions/resultsAction"
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { search } from "../actions/searchAction";
+import { fetchResults } from "../actions/resultsAction";
 
 class Navbar extends Component {
   state = {
@@ -27,42 +27,29 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-md stick-top navbar-dark bg-dark">
-        <a href="/" className="navbar-brand">
+      <div>
+        <nav className="hackerTitle">
           Hacker News
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse mr-0" id="navbarNavDropdown">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <form className="form-inline" onSubmit={this.handleFormSubmit}>
+          <div className="row">
+              <form className="searchBox" onSubmit={this.handleFormSubmit}>
                 <input
-                  className="form-control mr-sm-2"
                   type="search"
                   onChange={this.handleInputChange}
-                  placeholder="Search Hacker News!"
+                  placeholder="Search The News!"
                   aria-label="Search"
                 ></input>
+              </form>
+              <div className="row">
                 <button
-                  className="btn btn-outline-info my-2 my-sm-0"
+                  className="btn"
                   type="submit"
                 >
                   Search
                 </button>
-              </form>
-            </li>
-          </ul>
-        </div>
-      </nav>
+              </div>
+          </div>
+        </nav>
+      </div>
     );
   }
 }
@@ -76,10 +63,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    search: (terms) => { dispatch(search(terms));
+    search: (terms) => {
+      dispatch(search(terms));
     },
     fetchResults: (query) => dispatch(fetchResults(query)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar); 
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

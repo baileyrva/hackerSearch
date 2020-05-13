@@ -11,25 +11,25 @@ class SearchHistory extends Component {
     const { searches } = this.props;
     return (
       <div className="search-results">
-        <div className="row">
-          <div className="col-12">
-            <h1 className="text-light">Previous Searches</h1>
-          </div>
-        </div>
-        <div className="row m-3 p-2 bg-dark text-light border border-info">
-          <div className="col-12">
-            <p>"Click on any previous search to search again.</p>
-            {searches.map((search) => {
-              return (
-                <button
-                  className="btn btn-info m-2"
-                  id={search}
-                  onClick={this.previousSearch}
-                >
-                  {search}
-                </button>
-              );
-            })}
+        <div>
+          <h1>Previous</h1>
+
+          <div>
+            <div>
+              {searches.map((search) => {
+                return (
+                  <ul>
+                    <button
+                      className="btn btn-info"
+                      id={search}
+                      onClick={this.previousSearch}
+                    >
+                      {search}
+                    </button>
+                  </ul>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -38,15 +38,15 @@ class SearchHistory extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-        searches: state.searches
-    }
-}
+  return {
+    searches: state.searches,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchResults: (query) => dispatch(fetchResults(query))
-    }
-}
+  return {
+    fetchResults: (query) => dispatch(fetchResults(query)),
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchHistory)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchHistory);
