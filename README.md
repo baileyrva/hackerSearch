@@ -12,7 +12,7 @@ The application is deployed using github. The main page can be opened in the bro
 **So that** I can view news from a variety of orginal sources.  
 
 ## Built With
-[Redux](https://egghead.io/courses/getting-started-with-redux) -Backend development language\
+[Redux](https://egghead.io/courses/getting-started-with-redux) -State manipulation and storing\
 [React.js](https://reactjs.org/docs/getting-started.html) -JavaScript library for building user interfaces\
 [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) -Frontend development language and server usage
 
