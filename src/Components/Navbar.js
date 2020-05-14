@@ -31,22 +31,23 @@ class Navbar extends Component {
         <nav className="hackerTitle">
           Hacker News
           <div className="row">
-              <form className="searchBox" onSubmit={this.handleFormSubmit}>
-                <input
-                  type="search"
-                  onChange={this.handleInputChange}
-                  placeholder="Search The News!"
-                  aria-label="Search"
-                ></input>
-              </form>
-              <div className="row">
-                <button
-                  className="btn"
-                  type="submit"
-                >
-                  Search
-                </button>
-              </div>
+            <form className="searchBox" onSubmit={this.handleFormSubmit}>
+              <input
+                type="search"
+                onChange={this.handleInputChange}
+                placeholder="Search The News!"
+                aria-label="Search"
+              ></input>
+            </form>
+            <div className="row">
+              <button
+                className="btn"
+                type="submit"
+                onClick={this.handleFormSubmit}
+              >
+                Search
+              </button>
+            </div>
           </div>
         </nav>
       </div>
